@@ -2021,7 +2021,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://127.0.0.1:8000/api/contacts').then(function (response) {
+    this.axios.get('/api/contacts').then(function (response) {
       _this.contacts = response.data;
     });
   },
@@ -2029,7 +2029,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteBook: function deleteBook(id) {
       var _this2 = this;
 
-      this.axios["delete"]("http://127.0.0.1:8000/api/contact/delete/".concat(id)).then(function (response) {
+      this.axios["delete"]("/api/contact/delete/".concat(id)).then(function (response) {
         var i = _this2.contacts.map(function (item) {
           return item.id;
         }).indexOf(id); // find index of your object
@@ -2115,7 +2115,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://127.0.0.1:8000/api/contact/edit/".concat(this.$route.params.id)).then(function (response) {
+    this.axios.get("/api/contact/edit/".concat(this.$route.params.id)).then(function (response) {
       _this.book = response.data; // console.log(response.data);
     });
   },
@@ -2123,7 +2123,7 @@ __webpack_require__.r(__webpack_exports__);
     updateBook: function updateBook() {
       var _this2 = this;
 
-      this.axios.post("http://127.0.0.1:8000/api/contact/update/".concat(this.$route.params.id), this.book).then(function (response) {
+      this.axios.post("/api/contact/update/".concat(this.$route.params.id), this.book).then(function (response) {
         _this2.$router.push({
           name: 'home'
         });

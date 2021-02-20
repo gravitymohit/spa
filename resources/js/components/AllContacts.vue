@@ -44,7 +44,7 @@
         },
         created() {
             this.axios
-                .get('http://127.0.0.1:8000/api/contacts')
+                .get('/api/contacts')
                 .then(response => {
                     this.contacts = response.data;
                 });
@@ -52,7 +52,7 @@
         methods: {
             deleteBook(id) {
                 this.axios
-                    .delete(`http://127.0.0.1:8000/api/contact/delete/${id}`)
+                    .delete(`/api/contact/delete/${id}`)
                     .then(response => {
                         let i = this.contacts.map(item => item.id).indexOf(id); // find index of your object
                         this.contacts.splice(i, 1)

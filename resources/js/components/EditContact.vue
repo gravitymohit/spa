@@ -28,7 +28,7 @@
         },
         created() {
             this.axios
-                .get(`http://127.0.0.1:8000/api/contact/edit/${this.$route.params.id}`)
+                .get(`/api/contact/edit/${this.$route.params.id}`)
                 .then((response) => {
                     this.book = response.data;
                     // console.log(response.data);
@@ -37,7 +37,7 @@
         methods: {
             updateBook() {
                 this.axios
-                    .post(`http://127.0.0.1:8000/api/contact/update/${this.$route.params.id}`, this.book)
+                    .post(`/api/contact/update/${this.$route.params.id}`, this.book)
                     .then((response) => {
                         this.$router.push({name: 'home'});
                     });
